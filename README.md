@@ -1,4 +1,22 @@
-[TOC]
+# 🧬 Game of Life sum项目总结
+
+本项目基于经典的 Conway's Game of Life（生命游戏），使用 Python 实现了一个二维细胞自动机模拟系统。
+
+在该项目中，我构建了一个网格化的“生命世界”，每个细胞具有“存活”或“死亡”两种状态，并根据其周围八个邻居的状态，通过一系列规则进行状态更新，包括：
+- 细胞因邻居过少而死亡（Underpopulation）
+- 适当邻居数量下存活（Survival）
+- 因过度拥挤而死亡（Overpopulation）
+- 满足条件时产生新生命（Reproduction）
+
+通过不断迭代这些规则，系统能够模拟出复杂的动态演化过程，展示简单规则如何产生复杂行为。
+
+此外，该项目还涉及：
+- 网格数据结构的设计与更新
+- 邻域计算与状态转移算法
+- 模拟系统的迭代与演化逻辑
+- 对“细胞自动机（Cellular Automata）”计算模型的理解
+
+该项目体现了从简单规则构建复杂系统的计算思想，是理论计算机科学中重要的基础模型之一。 :contentReference[oaicite:0]{index=0}
 # Game 
 * involves a set of cells within an N * N **Grid** -- universe
 * Cells' **state**:alive or dead(1 / 0) -- life
@@ -86,8 +104,8 @@
 
 ### rle 
 #### Run-length encoding 
-  * rle (行程编程) ：an encoding thechnique - lossless data compression form (无损数据压缩形式).
-  * runs(a sequence of idential data values occurring in consecutive data elements; 连续数据元素中出现相同数据值的序列) stored as a single value and its sequence.
+  * rle (行程编程) ：an encoding thechnique - lossless data compression form (无损数据压缩形式).专门用来表示 Game of Life 的初始图案
+  * runs(a sequence of idential data values occurring in consecutive data elements; 连续数据元素中出现相同数据值的序列) stored as a single value and its sequence.用来存储细胞初始状态（pattern）
   * e.g
   `WWWWWWWWWWWWBWWWWWWWWWWWWBBBWWWWWWWWWWWWWWWWWWWWWWWWBWWWWWWWWWWWWWW` -> `12W1B12W3B24W1B14W`
   *  Its compact format typically used to describe cellular automata patterns.
